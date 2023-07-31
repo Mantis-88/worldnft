@@ -5,7 +5,7 @@ import { useAccount } from "wagmi";
 export default function NFTGallery({}) {
   const [nfts, setNfts] = useState();
   const [walletOrCollectionAddress, setWalletOrCollectionAddress] =
-    useState("vitalik.eth");
+    useState("");
   const [fetchMethod, setFetchMethod] = useState("wallet");
   const [pageKey, setPageKey] = useState();
   const [spamFilter, setSpamFilter] = useState(true);
@@ -14,8 +14,8 @@ export default function NFTGallery({}) {
   const [chain, setChain] = useState(process.env.NEXT_PUBLIC_ALCHEMY_NETWORK);
 
   const changeFetchMethod = (e) => {
-    setNfts()
-    setPageKey()
+    setNfts();
+    setPageKey();
     switch (e.target.value) {
       case "wallet":
         setWalletOrCollectionAddress("vitalik.eth");
